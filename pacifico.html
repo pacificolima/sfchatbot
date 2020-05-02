@@ -13,6 +13,16 @@ BOT SALESFORCE - DEVADM -PACHAT
 	}
 </style>
 
+<style type='text/css'>
+	.embeddedServiceHelpButton .helpButton .uiButton {
+		background-color: #005290;
+		font-family: "Arial", sans-serif;
+	}
+	.embeddedServiceHelpButton .helpButton .uiButton:focus {
+		outline: 1px solid #005290;
+	}
+</style>
+
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 <script type='text/javascript'>
 	var initESW = function(gslbBaseURL) {
@@ -30,10 +40,13 @@ BOT SALESFORCE - DEVADM -PACHAT
 			// Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
 			// Returns a valid button ID.
 		//};
-		//embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
+		embedded_svc.settings.prepopulatedPrechatFields = {
+		  "label":"Marca",  
+		  "transcriptFields": ["ContactLastName__c"]
+		}; //Sets the auto-population of pre-chat form fields
 		//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
 		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
-		embedded_svc.settings.smallCompanyLogoImgURL = 'https://boticario.virtualinteractions.com.br/pages/boticario/images/avatar-login.png';
+
 		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
 		embedded_svc.settings.entryFeature = 'LiveAgent';
 
@@ -49,7 +62,7 @@ BOT SALESFORCE - DEVADM -PACHAT
 				buttonId: '573290000004D5y',
 				baseLiveAgentURL: 'https://d.la4-c1cs-phx.salesforceliveagent.com/chat',
 				eswLiveAgentDevName: 'PACHAT_QUEUE_G',
-				isOfflineSupportEnabled: false
+				isOfflineSupportEnabled: true
 			}
 		);
 	};
