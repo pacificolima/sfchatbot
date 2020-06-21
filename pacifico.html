@@ -1,7 +1,6 @@
 <html>
 <body>
-BOT SALESFORCE - DEVADM -PACHATV4
-
+BOT SALESFORCE - DEVADM -PACHATV6
 
 <style type='text/css'>
 	.embeddedServiceHelpButton .helpButton .uiButton {
@@ -15,10 +14,10 @@ BOT SALESFORCE - DEVADM -PACHATV4
 
 <style type='text/css'>
 	.closeButton{
-	display: none;
+	display: none !important;
 	}
 	.minimizeButton{
-	display: none;
+	display: none !important;
 	}
 	.dockableContainer.show{
 	width: 100% !important;
@@ -87,7 +86,11 @@ BOT SALESFORCE - DEVADM -PACHATV4
 	} else {
 		initESW('https://service.force.com');
 	}
-	document.getElementById('helpButtonSpan').click();
+	object.addEventListener("load", myClick);
+	function myClick() {
+	  document.getElementById('helpButtonSpan').click();
+	}
+	
 </script>
 </body>
 </html>
